@@ -14,7 +14,7 @@ do
 
 	}
 	echo "<br>";
-	$wordcount=$wordcount+5; /*to add further five word*/
+	$wordcount=$wordcount+5; /*to add further five word to till end of the string*/
 }while($wordcount<=$count)
 
 
