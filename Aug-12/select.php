@@ -22,7 +22,7 @@ echo "Connected successfully <br>\n";
 //create table to a record
 echo "<table border=1px cellpadding=10>
 <tr class=tb>
-
+<th>Id<th>
 <th>Name</th>
 <th>EmailId</th>
 <th>DOB</th>
@@ -44,6 +44,7 @@ if ($result->num_rows > 0) {
 
 
         echo "<tr >
+        <td>".$row["Id"]."</td>
         <td>". $row["Name"]." </td>
         <td> " . $row["EmailId"]."</td>
         <td>" . $row["DOB"]."</td>
@@ -56,7 +57,7 @@ if ($result->num_rows > 0) {
 
           </td>
 
-          <td><button type='submit' formaction='view.php'>delete</button>
+          <td><button type='submit' formaction='delete.php'>delete</button>
     
      </form></td>
 

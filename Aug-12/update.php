@@ -7,32 +7,18 @@ $dbname = "studentForm";
 
 $id=$_POST['Id'];
 
-  $name  =  $_POST["name"];
-  $fname = $_POST["fathername"]; 
-    $address= $_POST["personaladdress"];
-  $sex  = $_POST["sex"];
-    $city   = $_POST["City"];
-  $course = $_POST["Course"];
-  $district= $_POST["District"];
-  $state   = $_POST["State"];
-  $pin  = $_POST["pincode"];
-  $email  = $_POST["emailid"];
-  $dob  = $_POST["dob"];
-  $mobile = $_POST["mobileno"];
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-$sql="UPDATE student1 SET Name='$name',FatherName='$fname',PersonalAddress='$address',Sex='$sex',City='$city',Course='$course',District='$district',State='$state',PinCode='$pin',EmailId='$email',Dob='$dob',MobileNo='$mobile' WHERE Id=$id";
+$sql="SELECT * FROM student1 WHERE Id=$id";
 
+while ($row    = mysql_fetch_array($result))
+            {
 
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
-}
-
-$conn->close();
+         
+          
 
 
 
@@ -56,25 +42,25 @@ $conn->close();
     <th><h3> update Student Registration Form</h3></th><br>
     <tr>
       <td>Name :</td> 
-      <td><input type="text" name="name" value="<?php echo  $name;?>" >
+      <td><input type="text" name="name" value="<?php echo $row["Name"];?>" >
       </td>
     </tr><br>
 
     <tr>
       <td>Father Name : </td>
-      <td><input type="text" name="fathername" value="<?php echo  $fname;?>" >
+      <td><input type="text" name="fathername" value="<?php echo  $fname?>" >
       </td>
     </tr><br>
     
     <tr>
       <td>Personal Address :</td>
-      <td><input type="text" name="personaladdress" value="<?php echo  $adress;?>"><td>
+      <td><input type="text" name="personaladdress" value="<?php echo  $address?>"><td>
     </tr><br>
 
     <tr>
       <td>Sex : </td>
-      <td><input type="radio" name="sex" value="<?php echo  $sex;?>" >Male
-      <input type="radio" name="sex" value="<?php echo  $sex;?>" >Female </td>
+      <td><input type="radio" name="sex" value="<?php echo  $sex?>" >Male
+      <input type="radio" name="sex" value="<?php echo  $sex?>" >Female </td>
     </tr><br>
 
     <tr>
@@ -121,22 +107,22 @@ $conn->close();
 
     <tr>
       <td>Pincode : </td>
-      <td><input type="text" name="pincode" value="<?php echo  $pin;?>"><td>
+      <td><input type="text" name="pincode" value="<?php echo  $pin?>"><td>
     </tr><br>
 
     <tr>
       <td>EmailId : </td>
-      <td><input type="text" name="emailid" value="<?php echo  $email;?>"  ></td>
+      <td><input type="text" name="emailid" value="<?php echo  $email?>"  ></td>
     </tr><br>
 
     <tr>
       <td>DOB : </td>
-      <td><input type="text" name="dob"  value="<?php echo  $dob;?>" ></td>
+      <td><input type="text" name="dob"  value="<?php echo  $row["DOB"];?>" ></td>
     </tr><br>
 
     <tr>
       <td>MobileNo : </td>
-      <td><input type="text" name="mobileno" value="<?php echo  $mobileno;?>"   ></td>
+      <td><input type="text" name="mobileno" value="<?php echo  $row["MobileNo"];?>"   ></td>
     </tr><br><br>
 
     <tr>
@@ -156,3 +142,6 @@ $conn->close();
 
 </body>
 </html>
+<?php
+}
+?>
