@@ -17,7 +17,13 @@ Route::get('Form', 'DetailForm@testForm');
 Route::post('addForm', 'DetailForm@addForm');
 
 Route::get('StudentForm','StudentDetail@studentform');
-Route::post('viewform','StudentDetail@viewform');
+
+
+
+Route::get('beared','BearRelationController@beared');
+Route::get('getbeared', 'BearRelationController@getbeared');
+
+
 
 
 

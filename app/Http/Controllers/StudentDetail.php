@@ -20,7 +20,9 @@ class StudentDetail extends Controller
 
 
 	public function viewform(Request $req)
-	{
+	{  
+
+		
  
 		$fname=$req->input('firstname');
 		$lname=$req->input('lastname');
@@ -80,7 +82,6 @@ class StudentDetail extends Controller
 		echo "<table>";
 
 
-		
 	}
 
 }
