@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style >
+{
+	margin-top: 2px;
+}
+</style>
+<body>
+	
+
+	<form action="insert.php" method="post">		
+		<table>
+		<th><h3>Student Registration Form</h3></th><br>
+		<tr><td>Name :</td> 
+		<td><input type="text" name="name" size="30"></td></tr><br>
+
+		<tr><td>Father Name : </td>
+		<td><input type="text" name="fathername" size="30"></td></tr><br>
+		
+		<tr><td>Personal Address :</td>
+		<td><input type="text" name="personaladdress" size="30"></<td></tr><br>
+
+		<tr><td>Sex : </td>
+		<td><input type="radio" name="sex"  value="male" size="10">Male
+		<input type="radio" name="sex" value="Female" size="10">Female </td></tr><br>
+
+		<tr><td>City : </td>
+		<td><select name="City">
+		<option value="" selected>select</option>
+		<option value="Trichy">TRICHY</option>
+		<option value="madhurai">MADHURAI</option>
+		<option value="thanjavur">THANJAVUR</option>
+		<option value="salem">SALEM</option>
+		</select></td></tr><br>
+
+		<tr><td>Course :</td>
+		<td><select name="Course">
+		<option value= "" selected>select</option>
+		<option value="B.Tech">B.TECH</option>
+		<option value="MCA">MCA</option>
+		<option value="MBA">MBA</option>
+		<option value="BCA">BCA</option>
+		</select></td></tr><br>
+
+		<tr><td>District :</td> 
+		<td><select name="District">
+		<option value="" selected>select</option>
+		<option value="Chennai">Chennai</option>
+		<option value="Trichy">Trichy</option>
+		<option value="Coimbatore">Coimbatore</option>
+		<option value="Madhurai">Madhurai</option>
+		</select></td></tr>	<br>
+
+		<tr><td>State : </td>
+		<td><input type="checkbox" name="State" value="Tamilnadu">Tamilnadu
+			<input type="checkbox" name="State" value="other">other
+		</td></tr><br>
+
+		<tr><td>Pincode : </td>
+		<td><input type="text" name="pincode" size="30"><td></tr><br>
+
+		<tr><td>EmailId : </td>
+		<td><input type="text" name="emailid"  size="30"></td></tr><br>
+
+		<tr><td>DOB : </td>
+		<td><input type="text" name="dob"  size="30"></td></tr><br>
+
+		<tr><td>MobileNo : </td>
+		<td><input type="text" name="mobileno"  size="30"></td></tr><br><br>
+
+		<tr>
+			<td>Marksheet:<td>
+			<input type="file" name="file"></tr>
+
+		<tr><td>
+		<input type="submit" value="Submit Form" /></td></tr>
+
+
+		</table>
+	</form>
+
+
+
+</body>
+</html>
