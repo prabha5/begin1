@@ -4,24 +4,19 @@
 	<title></title>
 </head>
 <body>
-	<form action="" method="post">
-		<input type="hidden" name="" value=" {{ csrf_field() }}">
+	<form action="{{ url('getFish') }}" method="get">
+	 {{ csrf_field() }}
 		<table>
 			<tr>
 				<td>weight</td>
-				<td><input type="checkbox" name="weight" >10kg
-					<input type="checkbox" name="weight">20kg
+				<td><input type="radio" name="weight" value="10">10kg
+					<input type="radio" name="weight" value="20">20kg
 				</td>			
 			</tr>
 			<tr>
-				<td>bear</td>
-				<td><select name=bear>
-					
-				<option value=" " selected>select</option>
-				<option value="sweety">sweety</option>
-				<option value="polar">polar</option>
-				<option value="cool">cool</option>
-				</select></td>
+				<td>bear_id</td>
+				<td><input type="text" name="bear_id"></td>
+				
 			</tr>
 			<tr>
 				<td>
@@ -30,9 +25,5 @@
 			</tr>
 		</table>
 	</form>
-	<div><a href="bearForm.blade.php">BearForm</a></div>
-	<div><a href="treeForm.blade.php">TreeForm</a></div>
-	<div><a href="picnicForm.blade.php">PicnicForm</a></div>
-
 </body>
 </html>

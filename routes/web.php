@@ -16,12 +16,27 @@
 Route::get('Form', 'DetailForm@testForm');
 Route::post('addForm', 'DetailForm@addForm');
 
-Route::get('StudentForm','StudentDetail@studentform');
+//Route::get('StudentForm','StudentDetail@studentform');
 
 
+Route::get('bear','BearRelationController@bear');
+Route::get('getBear', 'BearRelationController@getBear');
 
-Route::get('beared','BearRelationController@beared');
-Route::get('getbeared', 'BearRelationController@getbeared');
+Route::get('fish','BearRelationController@fish');
+Route::get('getFish', 'BearRelationController@getFish');
+
+Route::get('tree','BearRelationController@tree');
+Route::get('getTree', 'BearRelationController@getTree');
+
+Route::get('Picnics','BearRelationController@Picnics');
+Route::get('getPicnic', 'BearRelationController@getPicnic');
+
+Route::get('studentdetail','StudentController@studentdetail');
+
+Route::get('stud','StudentController@FormStudent');
+Route::get('studentForm','StudentController@studentForm');
+
+Route::get('name','StudentController@listStudent');
 
 
 

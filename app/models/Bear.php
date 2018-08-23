@@ -3,7 +3,7 @@
 namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\models\Fish;
 class Bear extends Model
 {
      // MASS ASSIGNMENT -------------------------------------------------------
@@ -16,7 +16,7 @@ class Bear extends Model
     // DEFINE RELATIONSHIPS --------------------------------------------------
     // each bear HAS one fish to eat
     public function fish() {
-        return $this->hasOne('Fish'); // this matches the Eloquent model
+        return $this->hasOne('App\models\Fish'); // this matches the Eloquent model
 
     }
 

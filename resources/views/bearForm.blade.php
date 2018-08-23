@@ -4,9 +4,10 @@
 	<title></title>
 </head>
 <body>
-	<form action="{{ url('getbeared') }}" method="post">
-		 <input type="hidden" name="" value="{{ csrf_field() }}">
+	<form action="{{ url('getBear') }}" method="get">
+		 {{ csrf_field() }}
 		<table>
+
 			<tr>
 				<td>name</td>
 				<td><input type="text" name="name"></td>
@@ -24,11 +25,8 @@
 					<input type="submit" name="submit">
 				</td>
 			</tr>
+
 		</table>
 	</form>
-	<div><a href="fishForm.blade.php">BearForm</a></div>
-	<div><a href="treeForm.blade.php">TreeForm</a></div>
-	<div><a href="picnicForm.blade.php">PicnicForm</a></div>
-
 </body>
 </html>
