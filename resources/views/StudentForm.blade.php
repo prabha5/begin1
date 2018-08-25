@@ -2,6 +2,15 @@
 <html>
 <head>
 </head>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <body>
 	
 
@@ -26,7 +35,7 @@
 
 			<tr>
 				<td>EmailId : </td>
-				<td><input type="email" name="emailid"></td>
+				<td><input type="text" name="emailid"></td>
 			</tr>
 
 			<tr>
@@ -66,6 +75,19 @@
 				<td>State : </td>
 			    <td><input type="checkbox" name="State" value="Tamilnadu">Tamilnadu
 				    <input type="checkbox" name="State" value="other">other</td>
+			</tr>
+			<tr>
+				<td>file</td>
+				<td><input type="file" name="files"></td>
+			</tr>
+
+			<tr>
+				<td>password</td>
+				<td><input type="text" name="password"></td>
+			</tr>
+			<tr>
+				<td>Confirm password</td>
+				<td><input type="text" name="rpassword"></td>
 			</tr>
 			
 			<tr>

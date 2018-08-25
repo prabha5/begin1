@@ -2,6 +2,16 @@
 <html>
 <head>
 </head>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <body>
 	
 
@@ -22,7 +32,7 @@
 
 			<tr>
 				<td>EmailId : </td>
-				<td><input type="email" name="email"></td>
+				<td><input type="text" name="email"></td>
 			</tr>
 
 
@@ -38,9 +48,8 @@
 			</tr>
 			<tr>
 				<td><input type="submit"  value="Insert"></td>
+				<td><a href="{{url("listStudent")}}">cancel</a></td>
 			</tr>
-		
-
 
 		</table>
 	</form>

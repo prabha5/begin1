@@ -21,8 +21,19 @@ class StudentDetail extends Controller
 
 	public function viewform(Request $req)
 	{  
+		 $validatedData = $req->validate([
+        'firstname' => 'required|max:50',
+        'lastname' => 'required|max:5',
+  		'email' => 'required',
+        'mobileno'=>'integer|required',
+        'password'=>'required|min:6',
+        'rpassword'=>'required|min:6',
+        'files'=>'required|mimes:pdf'
+    ]);
 
-		
+		$errors = $validator->errors();
+
+echo $errors->first('email');
  
 		$fname=$req->input('firstname');
 		$lname=$req->input('lastname');
@@ -33,6 +44,8 @@ class StudentDetail extends Controller
 		$dob=$req->input('dob');
 		$ddress=$req->input('address');
 		$state=$req->input('State');
+		$password=$req->input('password');
+		$rpassword=$req->input('rpassword');
 
 		echo "<table>";
 		echo "<tr>
@@ -79,6 +92,18 @@ class StudentDetail extends Controller
 				<td>State :</td>
 				<td>$state</td>
 			 </tr>";
+
+		 echo "<tr>
+			<td>password :</td>
+			<td>$password</td>
+		 </tr>";
+
+
+		  echo "<tr>
+			<td>confirm password :</td>
+			<td>$rpassword</td>
+		 </tr>";
+
 		echo "<table>";
 
 
