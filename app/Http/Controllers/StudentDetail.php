@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-
+use App\Http\Requests\StoreBlogPost;
+use Validator;
 
 class StudentDetail extends Controller
 {
@@ -19,21 +15,11 @@ class StudentDetail extends Controller
 	}
 
 
-	public function viewform(Request $req)
+	/*public function viewform(StoreBlogPost $req)
 	{  
-		 $validatedData = $req->validate([
-        'firstname' => 'required|max:50',
-        'lastname' => 'required|max:5',
-  		'email' => 'required',
-        'mobileno'=>'integer|required',
-        'password'=>'required|min:6',
-        'rpassword'=>'required|min:6',
-        'files'=>'required|mimes:pdf'
-    ]);
+		 $validate=$req->validater();
 
-		$errors = $validator->errors();
-
-echo $errors->first('email');
+		
  
 		$fname=$req->input('firstname');
 		$lname=$req->input('lastname');
@@ -106,6 +92,38 @@ echo $errors->first('email');
 
 		echo "<table>";
 
+
+	}*/
+	public function viewform(Request $req)
+	{
+		/*$validator = Validator::make($req->all(), [
+					    'firstname' => 'required|max:5',
+				        'lastname' => 'required|max:5',
+				        'emailid' => 'required',
+				        'mobileno'=>'integer|required',
+				        'password'=>'required|min:6',
+				        'rpassword'=>'required|min:6',
+				        
+				           
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('StudentForm')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+   
+           //$data  =session()->put('firstname',request()->firstname);
+          //$value  =session()->get('firstname');*/
+         //session()->flash('status','task successful');
+        //session()->flash('sname','task ');
+       //$req1=session()->flash('firstname','prabha');
+      //session()->reflash();
+        session()->keep('status');
+      echo session('status');
+      echo session('sname');
+
+    
 
 	}
 

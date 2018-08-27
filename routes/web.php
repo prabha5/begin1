@@ -16,8 +16,8 @@
 //Route::post('addForm', 'DetailForm@addForm');
 
 Route::get('StudentForm','StudentDetail@studentform');
-Route::post('viewform','StudentDetail@viewform')
-
+Route::get('viewform','StudentDetail@viewform');
+Route::get('display','TestSession@display');
 
 //Route::get('bear','BearRelationController@bear');
 //Route::get('getBear', 'BearRelationController@getBear');
